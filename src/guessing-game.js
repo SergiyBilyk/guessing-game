@@ -1,22 +1,22 @@
 class GuessingGame {
-    numb;
-    arr = [];
+    constructor() {}
+
     setRange(min, max) {
-        for (let i = min + 1; i < max; i++) {
-            this.arr.push(i);
-        }
-        this.numb = Math.ceil((this.arr.length - 1) / 2);
+        this.min = min;
+        this.max = max; 
     }
+
     guess() {
-        return this.arr[this.numb];
+        this.number = Math.ceil((this.min + this.max) / 2);
+        return this.number;
     }
+
     lower() {
-        this.arr = this.arr.slice(0, this.numb);
-        this.numb = Math.floor(this.arr.length / 2);
+        this.max = this.number;
     }
+
     greater() {
-        this.arr = this.array.slice(this.numb + 1);
-        this.numb = Math.floor(this.arr.length / 2);
+        this.min = this.number;
     }
 }
 
